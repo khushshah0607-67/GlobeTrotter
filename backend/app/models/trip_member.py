@@ -45,7 +45,11 @@ class TripMember(Base):
         nullable=False,
     )
     role: Mapped[TripMemberRole] = mapped_column(
-        Enum(TripMemberRole, name="trip_member_role"),
+        Enum(
+            TripMemberRole,
+            name="trip_member_role",
+            values_callable=lambda enum_type: [member.value for member in enum_type],
+        ),
         nullable=False,
     )
     joined_at: Mapped[datetime] = mapped_column(

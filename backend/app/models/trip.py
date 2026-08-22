@@ -44,7 +44,11 @@ class Trip(Base):
     end_date: Mapped[date] = mapped_column(Date, nullable=False)
     cover_image: Mapped[str | None] = mapped_column(String(512), nullable=True)
     status: Mapped[TripStatus] = mapped_column(
-        Enum(TripStatus, name="trip_status"),
+        Enum(
+            TripStatus,
+            name="trip_status",
+            values_callable=lambda enum_type: [member.value for member in enum_type],
+        ),
         nullable=False,
         default=TripStatus.PLANNING,
     )
