@@ -3,6 +3,7 @@ from app.schemas.auth import LoginRequest, TokenResponse
 from app.schemas.budget import BudgetCreate, BudgetResponse, BudgetUpdate
 from app.schemas.trip import (
     TripCreate,
+    TripAggregateSummary,
     TripMemberResponse,
     TripResponse,
     TripStatus,
@@ -27,6 +28,7 @@ __all__ = [
     "BudgetResponse",
     "BudgetUpdate",
     "TripCreate",
+    "TripAggregateSummary",
     "TripMemberResponse",
     "TripResponse",
     "TripStatus",

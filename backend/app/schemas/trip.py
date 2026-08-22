@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date, datetime
+from decimal import Decimal
 from typing import Self
 from uuid import UUID
 
@@ -8,6 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from app.models.trip import TripStatus
 from app.models.trip_member import TripMemberRole
+from app.schemas.budget import BudgetResponse
 from app.schemas.trip_city import TripCityResponse
 
 
@@ -79,3 +81,14 @@ class TripMemberResponse(BaseModel):
     user_id: UUID
     role: TripMemberRole
     joined_at: datetime
+
+
+class TripAggregateSummary(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    trip: TripSummaryResponse
+    cities_count: int
+    activities_count: int
+    total_activity_cost: Decimal
+    budget: BudgetResponse | None
+    remaining_budget: Decimal | None
