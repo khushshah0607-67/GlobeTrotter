@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 
 from app.api.routes.auth import router as auth_router
+from app.api.routes.activities import router as activities_router
+from app.api.routes.trip_cities import router as trip_cities_router
 from app.api.routes.trips import router as trips_router
 from app.core.config import settings
 
@@ -25,6 +27,8 @@ if settings.allowed_origins:
 
 app.include_router(auth_router, prefix="/api/v1")
 app.include_router(trips_router, prefix="/api/v1")
+app.include_router(trip_cities_router, prefix="/api/v1")
+app.include_router(activities_router, prefix="/api/v1")
 
 
 @app.get("/health")
