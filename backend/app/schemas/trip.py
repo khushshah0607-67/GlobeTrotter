@@ -5,7 +5,7 @@ from decimal import Decimal
 from typing import Self
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, model_validator
 
 from app.models.trip import TripStatus
 from app.models.trip_member import TripMemberRole
@@ -81,6 +81,24 @@ class TripMemberResponse(BaseModel):
     user_id: UUID
     role: TripMemberRole
     joined_at: datetime
+
+
+class MemberCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    email: EmailStr
+    role: TripMemberRole
+
+
+class MemberRoleUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    role: TripMemberRole
+
+
+class MemberResponse(TripMemberResponse):
+    full_name: str
+    email: EmailStr
 
 
 class TripAggregateSummary(BaseModel):
