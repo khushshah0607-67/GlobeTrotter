@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GlobeTrotter - Collaborative Trip Planning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#0b1c30",
+                      "on-surface-variant": "#3f4850",
+                      "surface-container-high": "#dce9ff",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-fixed": "#25005a",
+                      "tertiary": "#712ae2",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#bfc7d2",
+                      "surface-tint": "#006398",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#d2bbff",
+                      "tertiary-container": "#8a4cfc",
+                      "secondary-fixed": "#ffddb8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#004b73",
+                      "on-primary-fixed": "#001d31",
+                      "outline": "#707881",
+                      "error-container": "#ffdad6",
+                      "on-background": "#0b1c30",
+                      "primary": "#006194",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#855300",
+                      "on-primary-container": "#fdfcff",
+                      "secondary-container": "#fea619",
+                      "inverse-primary": "#93ccff",
+                      "inverse-surface": "#213145",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "primary-container": "#007bb9",
+                      "on-secondary-fixed": "#2a1700",
+                      "surface-dim": "#cbdbf5",
+                      "on-secondary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#5a00c6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#93ccff",
+                      "on-secondary-container": "#684000",
+                      "surface-container": "#e5eeff",
+                      "tertiary-fixed": "#eaddff",
+                      "on-secondary-fixed-variant": "#653e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "component-padding-y": "8px",
+                      "section-gap": "48px",
+                      "component-padding-x": "16px",
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation (Landing Page Variant - No App Shell Navigation) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant transition-all duration-300" id="main-nav">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">public</span>
+<a class="font-display-lg text-headline-md font-bold text-primary tracking-tight" href="#">GlobeTrotter</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Login</a>
+<a class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded-lg hover:bg-primary-container transition-colors" href="#">Register</a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-container-margin py-section-gap overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking, expansive landscape shot from an elevated vantage point showing a vibrant European coastal city during golden hour. The scene features terracotta rooftops cascading down to a deep azure sea. The lighting is warm and inviting, casting long shadows that highlight architectural details. The overall aesthetic is high-end travel photography, inspiring a sense of wonder and adventure, suitable for a premium SaaS travel platform hero background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaFBOajsMyPTQBSVEYZkBhI7cV7SkdAO0UQg-3jSN8Q3wcgbyS6uNarl51jRNdcx1tu6tm3vdrQWz-nMcYkltsL3naBbFTR539RP2btOU893mto0ykukCd8lEkOelHxwnfYLDBVQzaf-HTbs9UTBgYx8YVZXgrf_ike9D2Ai1hievr46gM7zTcXdbVIMssmNVrtUsK7e0yB1xWGVrmj5oTh5CMAg_20RiQ_ew3Y-zHRm0oUDEDQWYa8w">
+<div class="absolute inset-0 bg-inverse-surface/60 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center text-on-primary">
+<h1 class="font-display-lg text-display-lg md:text-[64px] font-bold mb-6 leading-tight drop-shadow-lg">Collaborative Trip Planning Made Simple.</h1>
+<p class="font-body-lg text-body-lg md:text-xl mb-10 text-surface-container-high max-w-2xl mx-auto drop-shadow-md">Coordinate flights, hotels, daily itineraries, and budgets with your friends and family in one beautiful, synchronized workspace.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-8 py-4 rounded-xl hover:bg-secondary hover:text-on-secondary transition-colors shadow-lg hover:-translate-y-1 duration-200">Start Planning</button>
+<button class="bg-surface/20 backdrop-blur-md border border-surface/30 text-on-primary font-label-md text-label-md px-8 py-4 rounded-xl hover:bg-surface/30 transition-colors shadow-lg hover:-translate-y-1 duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">play_circle</span>
+                        See How it Works
+                    </button>
+</div>
+</div>
+</section>
+<!-- Feature Highlights (Bento Grid) -->
+<section class="py-section-gap px-container-margin bg-surface max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Everything you need for the perfect trip.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Leave the chaotic spreadsheets behind. GlobeTrotter brings professional-grade organization to your personal adventures.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Feature 1: Multi-city (Spans 2 cols on md) -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden group border border-outline-variant bg-surface-container-lowest">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A detailed flat-lay view of a modern digital tablet displaying an interactive world map interface with multiple connected pins representing a complex travel itinerary. The tablet rests on a clean, light oak desk surrounded by minimalist travel accessories like a leather passport holder, a sleek metal pen, and a cup of artisan coffee. The lighting is bright, diffuse daylight, creating a soft, professional, and organized workspace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVPlMfiHfO_9doA4RG5Qmm9zGNgTB107OC5_shE9_zh6DO0f_DmvcHCC4FQblyC_qrIog5V0Ze3MF2RiCyMdZd4SsEHiRTcuWMGVAZwAjblXizgWT5P73yqKwlL5nrOHaSVZQ1LcFSzz6DVflzGlSqeONfSYUlXsEY_KGh15A1GKpmzWqxe-4V7k-mbSCMLllAq-CIYx-73bVFi39Sc28Yteocoo1rJPHeoC5skhKcnH8gxBhDdQnU1Q">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<div class="bg-primary-container/20 text-primary w-12 h-12 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+<span class="material-symbols-outlined text-2xl">route</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Multi-City Itineraries</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Seamlessly string together complex routes. Drag and drop cities, activities, and accommodations on a unified timeline.</p>
+</div>
+</div>
+<!-- Feature 2: Budget -->
+<div class="relative rounded-2xl overflow-hidden group border border-outline-variant bg-surface-container-lowest flex flex-col justify-end p-8">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/10 rounded-bl-full -mr-10 -mt-10"></div>
+<div class="bg-secondary-container/20 text-secondary w-12 h-12 rounded-xl flex items-center justify-center mb-4 relative z-10">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 relative z-10">Shared Budgets</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Set trip budgets for accommodation, transportation, and more. Plan your spending ahead of time.</p>
+</div>
+<!-- Feature 3: Collaboration -->
+<div class="relative rounded-2xl overflow-hidden group border border-outline-variant bg-surface-container-lowest flex flex-col justify-end p-8">
+<div class="absolute top-0 left-0 w-32 h-32 bg-tertiary-container/10 rounded-br-full -ml-10 -mt-10"></div>
+<div class="bg-tertiary-container/20 text-tertiary w-12 h-12 rounded-xl flex items-center justify-center mb-4 relative z-10">
+<span class="material-symbols-outlined text-2xl">group_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 relative z-10">Trip Collaboration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Invite friends and family to plan together with Owner, Editor, and Viewer roles.</p>
+</div>
+<!-- Feature 4: Map View (Spans 2 cols on md) -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden group border border-outline-variant bg-surface-container-lowest">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, high-resolution rendering of a stylized 3D topological map interface displayed on a sleek monitor. The map shows a detailed mountainous region with glowing route lines and interactive waypoint markers in vivid blues and ambers. The surrounding environment is out of focus, suggesting a modern, high-tech planning environment. The aesthetic is crisp, data-driven, yet visually engaging and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqCdnTnDA_S2_YSKeyzfeIjscgbl7a0S0oX_n2pf4Bvf0YPWcWwsFFpIn6bQCfNwhnOuxthgJ4HbVGm7QHjzlkK_FXC9L9VWQ3hQKIncN-MXg7GTmwsZ1xC33bbFx6GQUNTMfgwqi7fc_JONoC40AStTroIKSjtoToTww3fi2tBRYisPKmmXJR-GOLX3zCG1Jy7BUVSe5Ny8tzsuquuDbuR8RXFDd-OEuShV6-JIC30vqyBWpntiwWQ">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<div class="bg-surface-tint/20 text-surface-tint w-12 h-12 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+<span class="material-symbols-outlined text-2xl">map</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Interactive Map Views</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Visualize your days spatially. Optimize routes between attractions and see the geographical flow of your adventure.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-section-gap px-container-margin flex flex-col md:flex-row justify-between items-center gap-4 border-t border-outline-variant bg-surface-container-highest">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md font-black text-primary">GlobeTrotter</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">© 2024 GlobeTrotter Inc. Your Expert Concierge.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Blog</a>
+</nav>
+</footer>
+<script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-surface', 'bg-surface/90');
+                nav.classList.add('backdrop-blur-md');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-surface/90', 'bg-surface');
+                nav.classList.remove('backdrop-blur-md');
+            }
+        });
+    </script>
+
+
+</body></html>

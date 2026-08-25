@@ -1,0 +1,284 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Trip Details - Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#0b1c30",
+                      "on-surface-variant": "#3f4850",
+                      "surface-container-high": "#dce9ff",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-fixed": "#25005a",
+                      "tertiary": "#712ae2",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#bfc7d2",
+                      "surface-tint": "#006398",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#d2bbff",
+                      "tertiary-container": "#8a4cfc",
+                      "secondary-fixed": "#ffddb8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#004b73",
+                      "on-primary-fixed": "#001d31",
+                      "outline": "#707881",
+                      "error-container": "#ffdad6",
+                      "on-background": "#0b1c30",
+                      "primary": "#006194",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#855300",
+                      "on-primary-container": "#fdfcff",
+                      "secondary-container": "#fea619",
+                      "inverse-primary": "#93ccff",
+                      "inverse-surface": "#213145",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "primary-container": "#007bb9",
+                      "on-secondary-fixed": "#2a1700",
+                      "surface-dim": "#cbdbf5",
+                      "on-secondary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#5a00c6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#93ccff",
+                      "on-secondary-container": "#684000",
+                      "surface-container": "#e5eeff",
+                      "tertiary-fixed": "#eaddff",
+                      "on-secondary-fixed-variant": "#653e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "component-padding-y": "8px",
+                      "section-gap": "48px",
+                      "component-padding-x": "16px",
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                      "label-md": ["14px", { "lineHeight": "1", "fontWeight": "600" }],
+                      "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                      "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant transition-colors duration-200">
+<div class="flex items-center gap-6">
+<span class="font-display-lg text-display-lg font-bold text-primary">GlobeTrotter</span>
+<nav class="hidden md:flex gap-6 items-center pt-1">
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Dashboard</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md transition-colors px-2" href="#">Trips</a>
+
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Budget</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a corporate traveler, soft lighting, clean background, modern aesthetic, showcasing a sense of reliability and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgpE2E_1iGZk2qUVP0hfkNeCKGH8iQuPxA4zJHk_au-8RHhbdHOHED-ewsfoU_FkvrRRzxFabLJyjBQ5jxLQWYn0nPBXNWI2VeF1P1urcW5PoG7KNLLrCiwFyTT4lJz744PKImvTg0SYrnTfgtVmJ4pKNBkdlVREX1rr0uXlbBdFSyzC4pAhg0J23aJBCbrpSVELmQTwb6zbToYCWmPXZI02XRgJN6cxYLt45ceDjyGYsFomwtiI3kjA">
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] p-4 w-64 bg-surface-container-low border-r border-outline-variant z-40 justify-between">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<img alt="Trip cover image icon" class="w-10 h-10 rounded-lg object-cover border border-outline-variant" data-alt="A vibrant, stylized map icon representing a European destination, featuring high-contrast colors like deep blue and warm amber, clean lines, and a professional vector art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG5bdnPPRnIlQvq_IjLD8LKQe-chpMlhyixxFTMfS-7CD3um7sNuuXGZD3flzMu_T71POIyYv6GNvA9OVdQM_DmIg5d4Wta05mFwB2Eu5rn-9gleIBerBNjw13N0N6nC7dAmDIX838tfF0rkaOyzVD3w3smvmVkTJ02XtLJPVHHaMH-JVtorZICHilkvXrakYYqFLHZ3bZWs8GJTe8lHU974TJ5OGDzB_00flzh86Dbq15iXjNlMmx4Q">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary truncate w-40">Current Trip</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Planning Phase</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-primary-container text-on-primary-container font-bold rounded-xl px-4 py-3 flex items-center gap-3 transition-all opacity-100" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-label-md text-label-md">Itinerary</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Budget</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Members</span>
+</a>
+</nav>
+<button class="mt-4 bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded-xl hover:bg-on-primary-fixed-variant transition-colors w-full flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Add New Stop
+            </button>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-xl px-4 py-3 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] lg:pl-[280px] px-container-margin pb-section-gap flex flex-col gap-section-gap max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<section class="flex flex-col gap-6">
+<div class="relative w-full h-[240px] rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A breathtaking aerial view of the Amalfi Coast in Italy during golden hour. The scene features steep, terraced cliffs covered in vibrant green foliage and colorful pastel houses descending towards the deep, sparkling azure waters of the Mediterranean Sea. The lighting is warm and inviting, creating long soft shadows and a romantic, serene mood. The overall aesthetic is highly professional, crisp, and suitable for a premium travel planning application header, focusing on expansive beauty and natural splendor." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHACbAUzamjAxsX8_qsXZMJy1cRspoD7WX2xRGQUozqfSoNRgS_xxMvyZyJ2gZqoECzJbAVHjNaTg7rWdT997KNA0JNiEHxAc_02vOQve9h8WpTtVr1dkqMlwNIKSDEXU3QV_mW_wtEZ23PttCU-o1_UtgX3zj5KMFf6O9GvZF1zG7-2eBSXpx1-saTw7y06P03AjctW3w99ydH-_55ik0iJbC6spUu-leCxs3Bj6rMy_4gCVVXh3jqA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest font-bold">Draft</span>
+<span class="text-surface-container-highest font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span> Sep 12 - Sep 26, 2024
+                        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-primary">European Summer Escapade</h1>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">
+                A comprehensive two-week journey exploring the historic streets of Rome, the artistic heritage of Florence, and culminating in a relaxing retreat along the Amalfi Coast. This itinerary is currently in the planning phase, focusing on securing high-priority reservations and finalizing the budget allocation for activities.
+            </p>
+</section>
+<!-- Summary & Bento Grid Area -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Cards (Span 8 cols on desktop) -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_city</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Destinations</p>
+<p class="font-headline-md text-headline-md text-on-surface">3 Cities</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">hiking</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Planned Activities</p>
+<p class="font-headline-md text-headline-md text-on-surface">14 Items</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Estimated Activity Cost</p>
+<p class="font-headline-md text-headline-md text-on-surface">$1,250</p>
+</div>
+</div>
+</div>
+<!-- Budget Overview (Span 4 cols on desktop) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Budget</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Overall trip allowance</p>
+</div>
+<button class="text-primary hover:bg-surface-container p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Activity Cost</span>
+<span class="font-headline-md text-headline-md text-on-surface">$3,450</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Activity Cost</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant">$5,000</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-variant h-3 rounded-full overflow-hidden mt-2 relative">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 69%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-right mt-1">$1,550 Remaining</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface border-t border-outline-variant rounded-t-xl shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

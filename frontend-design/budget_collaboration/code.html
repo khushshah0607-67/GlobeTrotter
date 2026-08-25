@@ -1,0 +1,408 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GlobeTrotter - Budget</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#0b1c30",
+                      "on-surface-variant": "#3f4850",
+                      "surface-container-high": "#dce9ff",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-fixed": "#25005a",
+                      "tertiary": "#712ae2",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#bfc7d2",
+                      "surface-tint": "#006398",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#d2bbff",
+                      "tertiary-container": "#8a4cfc",
+                      "secondary-fixed": "#ffddb8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#004b73",
+                      "on-primary-fixed": "#001d31",
+                      "outline": "#707881",
+                      "error-container": "#ffdad6",
+                      "on-background": "#0b1c30",
+                      "primary": "#006194",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#855300",
+                      "on-primary-container": "#fdfcff",
+                      "secondary-container": "#fea619",
+                      "inverse-primary": "#93ccff",
+                      "inverse-surface": "#213145",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "primary-container": "#007bb9",
+                      "on-secondary-fixed": "#2a1700",
+                      "surface-dim": "#cbdbf5",
+                      "on-secondary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#5a00c6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#93ccff",
+                      "on-secondary-container": "#684000",
+                      "surface-container": "#e5eeff",
+                      "tertiary-fixed": "#eaddff",
+                      "on-secondary-fixed-variant": "#653e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "component-padding-y": "8px",
+                      "section-gap": "48px",
+                      "component-padding-x": "16px",
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] p-4 w-64 bg-surface-container-low dark:bg-on-surface border-r border-outline-variant dark:border-outline z-40">
+<div class="mb-8">
+<img class="w-full h-32 object-cover rounded-xl mb-4" data-alt="A detailed wide shot of a beautiful tropical beach scene to represent a trip cover image icon. Crisp blue waters, white sand, and palm trees under a bright sunny sky. Modern bright corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIPNhwn54TKkAxcEurVW6ryOBzTKWBWHnDUH71zbq1S1--lG4h3mtP5tla4Lx0Ni--XOyL76tyRkfvb5TsljVUAIPB2U61V9wFi3atilzvHDfG8__P2C_ysI63InIfUSIU11bOyxNxrWOhrFk2lrlCdDL-BgvCpG5rc8ADRjwjYNWR20SXMAOS89zOuFh9Lj-QkPhmKNi18pC3C_w5rBmuGa3_rPrnlp2YiazedDdWlEligHNf0UHIXQ">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Current Trip</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Planning Phase</p>
+</div>
+<ul class="flex-1 space-y-2">
+<li class="">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-tertiary-fixed-variant rounded-xl font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-tertiary-fixed-variant rounded-xl font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">event_note</span>
+                    Itinerary
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 p-3 bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary font-bold rounded-xl font-label-md text-label-md opacity-80 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+                    Budget
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-tertiary-fixed-variant rounded-xl font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Members
+                </a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full py-2 px-4 bg-secondary-container text-on-secondary-container font-label-md rounded-xl hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined">add</span> Add New Stop
+            </button>
+<ul class="space-y-2 border-t border-outline-variant pt-4">
+<li class="">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-tertiary-fixed-variant rounded-xl font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">help</span> Help
+                    </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-tertiary-fixed-variant rounded-xl font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">logout</span> Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed-dim">GlobeTrotter</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors p-2 rounded" href="#">Dashboard</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors scale-95 transition-transform duration-150" href="#">Trips</a>
+
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors p-2 rounded" href="#">Budget</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a smiling person to act as a user profile avatar. Bright corporate modern lighting, clean background, conveying approachability and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHKAvleg7dI_sMsvVctNE6DS3ZRaVV9q4fO78uSIpnxhDWeFdj4_Qg6_CZ526-QUKrisJKyErmuA-yBWrUE6ZQESSwcRrduor1-PGIv_JbaYp38XG1ihX88HO73EWC2ldFxtnGAbSqZFHVzIqXdBORJNjiL7rJp2VjUiAZyjgycRYsLKlitZCMO6L4sR_WwYCoZVwHLgSrLFe5HZnRfQ5qRQ6IcsytyZnH2yb9F-YgeC6M0IlbbecsvA">
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 mt-16 lg:ml-64 p-container-margin lg:p-section-gap overflow-y-auto">
+<div class="max-w-6xl mx-auto space-y-section-gap">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-outline-variant pb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Budget &amp; Members</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage expenses and collaborate on your trip to Tokyo.</p>
+</div>
+<div class="flex gap-2">
+
+
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter">
+<!-- Budget Overview Card -->
+<div class="xl:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Trip Budget</h3>
+<span class="font-headline-md text-headline-md font-bold text-primary">$4,250.00 <span class="text-body-sm text-on-surface-variant font-normal">/ $5000</span></span>
+</div>
+<div class="space-y-4">
+<!-- Accommodation -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bed</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-on-surface">Accommodation</span>
+<span class="font-label-md text-on-surface">$1,500</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<!-- Transportation -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">flight</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-on-surface">Transportation</span>
+<span class="font-label-md text-on-surface">$1,200</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<!-- Food -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-on-surface">Food</span>
+<span class="font-label-md text-on-surface">$800</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+<!-- Activities -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_activity</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-on-surface">Activities</span>
+<span class="font-label-md text-on-surface">$600</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined">more_horiz</span></div><div class="flex-1"><div class="flex justify-between mb-1"><span class="font-label-md text-on-surface">Miscellaneous</span><span class="font-label-md text-on-surface">$150</span></div><div class="w-full bg-surface-variant rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 15%"></div></div></div></div></div>
+</div>
+<!-- Members Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col h-full">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Members</h3>
+<button class="text-primary hover:text-primary-container transition-colors p-1 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+<div class="space-y-4 flex-1">
+<!-- Member 1 (Owner) -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Profile picture of a professional woman smiling, soft lighting, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo7Reskku9WGfbQWrzA-z7zppC8guTz1tIVDjM1alLrWQaE5IhjC4mwGPZ4xP81EtxGTFWLInP6vaRwfFmFZ6RFghQB75min8RLEfSLcwZL9X9kTvL6KORAkJX7c8eLwuoHCgOVJ3E-qW6TZPGA_Jq9vPyI1aI0usqWozFd6B1kCu0QtyJq-c4EoaRi27NZ09gmlHUz-dkZqxtWH7ICZ3braxTXgsDKkpkl4UzVynQYVEWFrRYMWwKvg">
+<div>
+<p class="font-label-md text-on-surface">Sarah Connor</p>
+<p class="font-body-sm text-on-surface-variant">sarah@example.com</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-primary-container text-on-primary-container font-label-sm rounded-full text-xs">Owner</span>
+</div>
+<!-- Member 2 (Editor) -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Profile picture of a professional man, casual business attire, soft lighting, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLIpgcZy3AXTxtk1PS-N6xuskLZ9IrenPtlsHFTCOLo-BNia29Xq_jlusG84A2emSFHzJ8y6L5gWsK24-AQj88y7TIsWocLBBjaQx8h8ngGF2-sg-iIwZdB80YPD_IDrqLZtd7riv4Ie2kTnFrFjBNl5RoLhelBRMyZa7q4c9GgSip4LZXnoPH768OiJBzER34CzpY4sJip8XIaL1LIT4PZSgVhPu0TQ-GGriSm2i6j_ooFmCfClHvAg">
+<div>
+<p class="font-label-md text-on-surface">John Smith</p>
+<p class="font-body-sm text-on-surface-variant">john@example.com</p>
+</div>
+</div>
+<select class="bg-transparent border-none text-on-surface-variant font-label-sm text-xs cursor-pointer focus:ring-0">
+<option>Editor</option>
+<option>Viewer</option>
+<option class="text-error">Remove</option>
+</select>
+</div>
+<!-- Member 3 (Viewer) -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-bold">
+                                    EJ
+                                </div>
+<div>
+<p class="font-label-md text-on-surface">Emma Jones</p>
+<p class="font-body-sm text-on-surface-variant">emma@example.com</p>
+</div>
+</div>
+<select class="bg-transparent border-none text-on-surface-variant font-label-sm text-xs cursor-pointer focus:ring-0">
+<option>Viewer</option>
+<option>Editor</option>
+<option class="text-error">Remove</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-on-surface border-t border-outline-variant dark:border-outline shadow-lg rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Trips</span>
+</a>
+
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+
+
+</body></html>
